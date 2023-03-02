@@ -1,38 +1,152 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    background: linear-gradient(to right bottom, #e1b382, #c89666);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.app-wrapper {
+    background-color: #12343b;
+    min-width: 450px;
+    min-height: 650px;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 3px 6px 40px #000;
+    margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+.header h1 {
+    color: #fff;
+    text-align: center;
+    margin: 30px 0;
+    font-size: 36px;
+}
+
+.task-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 60%;
+    max-width: 400px;
+    margin-right: 10px;  
+}
+
+.button-add {
+    width: 100px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 0;
+    background-color: green;
+    cursor: pointer;
+    color: white;
+}
+.list-item-faible,
+.list-item-moyenne,
+.list-item-grande {
+    display: flex;
+    margin: 20px 0;
+    border-radius: 10px;
+    padding: 20px;
+    max-height: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+.list-item-faible{
+    border: 1px solid green;    
+}
+.list-item-moyenne{
+    border: 1px solid yellow;
+}
+.list-item-grande{
+    border: 1px solid red;
+}
+
+.button-complete,
+.button-delete,
+.button-edit {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 20px;
+    border-radius: 50%;
+}
+.button-complete{
+    color: #ff6c6c;
+    margin-right: 10px;
+}
+.button-edit{
+    color: #e2d029;
+    margin-right: 10px;
+}
+.button-delete{
+    color: lightseagreen;
+}
+.complete {
+    text-decoration-style: solid;
+    text-decoration-line: line-through;
+    text-decoration-color: #ff6c6c;
+}
+.list {
+    width: 220px;
+    background-color: #12343b;
+    border: none;
+    color: #ccc;
+    font-size: 14px;
+    padding-left: 8px;
+    margin-right: 15px;
+   
+}
+input:focus,
+button:focus {
+    outline: none;
+}
+.btn-delete-pl {
+    text-align: center;
+}
+.btn-delete{
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 0;
+    background-color: red;
+    cursor: pointer;
+    color: white;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .search-bar input[type='text'] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    max-width: 400px;
+    margin-right: 10px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .search-bar input:focus {
+    outline: none;
+    border: 1px solid #c89666;
   }
+  
+.importance {
+    color: white;
 }
+  
