@@ -1,13 +1,18 @@
 import React from "react";
+import { nanoid } from 'nanoid';
+
 
 const Form = ({ input, setInput, todos, setTodos }) => {
 
+  
+
   const onFormSubmit = (event) => {
     event.preventDefault();
-    const newTodo = {id: todos.length +1, titre: input, etat: false, importance: "faible"};
+    const newTodo = {id: nanoid(), titre: input, etat: false, importance: "faible"};
     setTodos([...todos, newTodo]);
     localStorage.setItem('todos', JSON.stringify([...todos, newTodo]));
     setInput("");
+    console.log(todos);
   }
 
 

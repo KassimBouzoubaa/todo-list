@@ -38,14 +38,9 @@ const TodosList = ({ todos, setTodos }) => {
           placeholder='Recherchez un Todo'
         />
       </div>
-      {filteredTodo.map((todo, i) => (
+      {filteredTodo !== "" ? filteredTodo.map((todo, i) => (
         <li className={`list-item-${todo.importance}`} key={i}>
-          <input
-            className='list'
-            type='text'
-            value={todo.titre}
-            onChange={(e) => e.preventDefault()}
-          />
+          <p className="list">{todo.titre}</p>
           <div>
             <button
               className='button-complete task-button'
@@ -63,7 +58,26 @@ const TodosList = ({ todos, setTodos }) => {
             </select>
           </label>
         </li>
-      ))}
+      )) : todos.map((todo, i) => (
+        <li className={`list-item-${todo.importance}`} key={i}>
+          <p className="list">{todo.titre}</p>
+          <div>
+            <button
+              className='button-complete task-button'
+              onClick={() => handleDelete(todo)}
+            >
+              <i className='fa fa-check-circle'></i>
+            </button>
+          </div>
+            <label>
+           <span className="importance">Importance:  </span> 
+            <select value={todo.importance} onChange={(event) => handleImportanceChange(event, todo.id)}>
+              <option value="faible">Faible</option>
+              <option value="moyenne">Moyenne</option>
+              <option value="grande">Grande</option>
+            </select>
+          </label>
+        </li> ))}
     </div>
   );
 };
